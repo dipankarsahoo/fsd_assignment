@@ -3,8 +3,6 @@
 # perimeter to be displayed when the triangle can exist.
 
 
-def perimeterTriagnle(a, b, c):
-    return a + b + c
 
 def validateTraiangleSides(func):
     
@@ -13,14 +11,18 @@ def validateTraiangleSides(func):
             return func(a, b, c)
     
     return inner
-            
-perimeter = validateTraiangleSides(perimeterTriagnle)
+
+@validateTraiangleSides
+def perimeterTriagnle(a, b, c):
+    return a + b + c
+      
+# perimeter = validateTraiangleSides(perimeterTriagnle)
 
 a = float(input('Enter length of one side of triangle'))
 b = float(input('Enter length of second side of triangle'))
 c = float(input('Enter length of third side of triangle'))
 
-if perimeter(a, b, c) != None:
-    print(f'Perimeter of triangle ={perimeter(a, b, c)}')
+if perimeterTriagnle(a, b, c) != None:
+    print(f'Perimeter of triangle ={perimeterTriagnle(a, b, c)}')
 else:
     print('Wrong inputs for sides of a triangle')
