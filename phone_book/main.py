@@ -12,9 +12,6 @@ import delete_all_contact
 from termcolor import colored
 
 
-
-color = display.bcolors()
-
 while True:
     display.welcome_message()
 
